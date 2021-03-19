@@ -3,7 +3,7 @@
         {
             "src": "/",
             "headers": {
-                "cache-control": "s-maxage=10000"
+                "cache-control": "public, max-age=10000"
             },
             "dest": "/index.html"
         }
