@@ -1,13 +1,22 @@
 {
     "headers": [
         {
-            "source": "(.*)",
+            "source": "/dist",
             "headers": [
                 {
                     "key": "Cache-Control",
                     "value": "public, max-age=360000"
                 }
             ]
+        }
+    ],
+    "routes": [
+        {
+            "src": "/",
+            "headers": {
+                "cache-control": "s-maxage=1000"
+            },
+            "dest": "/index.html"
         }
     ]
 }
