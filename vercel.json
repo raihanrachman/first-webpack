@@ -1,0 +1,13 @@
+{
+    "headers": [
+        {
+            "source": "/dist",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=360000"
+                }
+            ]
+        }
+    ]
+}

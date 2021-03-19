@@ -1,5 +1,6 @@
 import "./assets/scss/main.scss"
 import "normalize.css"
 
-console.log("run")
+const hah = "hahass"
+console.log(hah)
 
