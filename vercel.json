@@ -14,7 +14,7 @@
         {
             "src": "/",
             "headers": {
-                "cache-control": "s-maxage=1000"
+                "cache-control": "s-maxage=10000"
             },
             "dest": "/index.html"
         }
