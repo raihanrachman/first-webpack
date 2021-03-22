@@ -1,32 +1,12 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
     entry: "./src/index.js",
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist/"),
+        assetModuleFilename: 'images/[hash][ext][query]'
     },
-    plugins: [
-        new HtmlWebpackPlugin(
-            {
-                hash: true,
-                cache: true,
-                title: 'My Awesome application',
-                // myPageHeader: 'Hello World',
-                template: './public/index.html',
-                // chunks: ['vendor', 'shared', 'app'],
-                // path: path.join(__dirname, "../dist/"),
-                filename: 'index.html',
-            }
-            // {
-            //     path: path.join(__dirname, "../dist/"),
-            //     filename: 'index.html'
-            // }
-        )
-    ],
-
     module: {
         rules: [
             {
@@ -47,9 +27,18 @@ module.exports = {
                     "style-loader",
                     // Translates CSS into CommonJS
                     "css-loader",
-
                 ],
             },
+            {
+                test: /\.html$/,
+                use: ["html-loader"],
+            },
+            {
+                test: /\.(svg|png|jpe?g|gif)$/i,
+                type: 'asset/resource'
+            }
+
+
         ],
     },
     devServer: {
