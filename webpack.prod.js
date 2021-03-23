@@ -8,7 +8,7 @@ module.exports = merge(common, {
     plugins: [
         new HtmlWebpackPlugin(
             {
-                hash: true,
+                hash: false,
                 cache: true,
                 title: 'My Awesome application',
                 template: './public/index.html',
